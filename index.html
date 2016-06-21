@@ -61,6 +61,126 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-读jquery源码摘要01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/21/读jquery源码摘要01/" class="article-date">
+  <time datetime="2016-06-21T15:52:23.000Z" itemprop="datePublished">2016-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/21/读jquery源码摘要01/">读jquery源码摘要01</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="比较少用的几个jQuery构造函数用法">比较少用的几个jQuery构造函数用法</h1><ol>
+<li>jQuery($jQueryObject)</li>
+<li>jQuery(Object)</li>
+</ol>
+<h1 id="对性能优化的启示">对性能优化的启示</h1><p>利用props一次性传入要添加的属性键值对</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://huming0618.github.io/2016/06/21/读jquery源码摘要01/" data-id="cippmqfuy0002cjs6gnroa49t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery-study-frontend/">jquery,study,frontend</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-一篇有趣的前端文章读后思考和总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/21/一篇有趣的前端文章读后思考和总结/" class="article-date">
+  <time datetime="2016-06-21T15:51:57.000Z" itemprop="datePublished">2016-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/21/一篇有趣的前端文章读后思考和总结/">一篇有趣的前端文章读后思考和总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天读了一篇有趣读文章<a href="http://www.cnblogs.com/Wayou/p/things_you_dont_know_about_frontend.html?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">前端不为人知的一面</a>，以下是几点思考和总结:</p>
+<ul>
+<li>利用a标签自动解析URL<br>function parseURL(url) {<br>  var a =  document.createElement(‘a’);<br>  a.href = url;<br>  return {<pre><code>source: url,
+protocol: a.protocol.replace(<span class="string">':'</span>,<span class="string">''</span>),
+host: a.hostname,
+port: a.port,
+query: a.search,
+params: (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> ret = {},
+        seg = a.search.replace(<span class="regexp">/^\?/</span>,<span class="string">''</span>).split(<span class="string">'&amp;'</span>),
+        len = seg.length, i = <span class="number">0</span>, s;
+    <span class="keyword">for</span> (;i&lt;len;i++) {
+        <span class="keyword">if</span> (!seg[i]) { <span class="keyword">continue</span>; }
+        s = seg[i].split(<span class="string">'='</span>);
+        ret[s[<span class="number">0</span>]] = s[<span class="number">1</span>];
+    }
+    <span class="keyword">return</span> ret;
+})(),
+file: (a.pathname.match(<span class="regexp">/\/([^\/?#]+)$/i</span>) || [,<span class="string">''</span>])[<span class="number">1</span>],
+hash: a.hash.replace(<span class="string">'#'</span>,<span class="string">''</span>),
+path: a.pathname.replace(<span class="regexp">/^([^\/])/</span>,<span class="string">'/$1'</span>),
+relative: (a.href.match(<span class="regexp">/tps?:\/\/[^\/]+(.+)/</span>) || [,<span class="string">''</span>])[<span class="number">1</span>],
+segments: a.pathname.replace(<span class="regexp">/^\//</span>,<span class="string">''</span>).split(<span class="string">'/'</span>)
+</code></pre>  };<br>}</li>
+<li><p>script保存任意信息<br><script type="text" id="template"><br>  <h1>This won’t display</h1><br></script><br>var text = document.getElementById(‘template’).innerHTML</p>
+</li>
+<li><p>垂直水平居中<br>.center-vertical {<br>  position: relative;<br>  top: 50%;<br>  transform: translateY(-50%);<br>}<br>.center-horizontal {<br>  position: relative;<br>  left: 50%;<br>  transform: translateX(-50%);<br>}</p>
+</li>
+<li><p>多重边框<br>div {<br>  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(0, 0, 0, 0.2), 0 0 0 24px rgba(0, 0, 0, 0.2);<br>  height: 200px;<br>  margin: 50px auto;<br>  width: 400px<br>}</p>
+</li>
+<li><p>创建长宽比固定的元素</p>
+<div style="width: 100%; position: relative; padding-bottom: 20%;"><br>  <div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;background-color:yellow;"><br>      this content will have a constant aspect ratio that varies based on the width.<br>  </div><br></div>
+</li>
+<li><p>整数的操作<br>var foo = (12.4 / 4.13) | 0;//结果为3<br>var bar = ~~(12.4 / 4.13);//结果为3<br><a href="http://jsperf.com/math-floor-vs-math-round-vs-parseint/42" target="_blank" rel="external">详见</a></p>
+</li>
+<li><p>不声明第三个变量的值交换<br>var a=1,b=2;a=[b,b=a][0];</p>
+</li>
+</ul>
+<p>延伸阅读<br><a href="http://www.cnblogs.com/Wayou/p/jquery_best_practise.html" target="_blank" rel="external">jQuery编程的最佳实践</a><br><a href="http://learn.jquery.com/performance/detach-elements-before-work-with-them/" target="_blank" rel="external">Deattach</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://huming0618.github.io/2016/06/21/一篇有趣的前端文章读后思考和总结/" data-id="cippmqfv50005cjs6ajd7yhf5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frontend/">frontend</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-DOM节点数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/21/DOM节点数/" class="article-date">
@@ -88,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2016/06/21/DOM节点数/" data-id="cippmo6es0004bns6xwx64lx4" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2016/06/21/DOM节点数/" data-id="cippmqfv70008cjs6xnfge0dv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dom-frontend-development/">dom,frontend,development</a></li></ul>
@@ -143,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2015/08/30/记一次产品经理活动/" data-id="cippmo6ev0007bns65484quab" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2015/08/30/记一次产品经理活动/" data-id="cippmqfvb000bcjs62saaktie" class="article-share-link">Share</a>
       
       
     </footer>
@@ -188,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2015/08/30/hello-world/" data-id="cippmo6eh0003bns6o3va8z4p" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2015/08/30/hello-world/" data-id="cippmqfuu0001cjs6cm8qi9ju" class="article-share-link">Share</a>
       
       
     </footer>
@@ -236,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2015/08/12/准备工作/" data-id="cippmo6ex0008bns6shxyeudp" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2015/08/12/准备工作/" data-id="cippmqfu00000cjs66mm1pjpq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +377,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom-frontend-development/">dom,frontend,development</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom-frontend-development/">dom,frontend,development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/">frontend</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-study-frontend/">jquery,study,frontend</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -266,7 +386,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/dom-frontend-development/" style="font-size: 10px;">dom,frontend,development</a>
+      <a href="/tags/dom-frontend-development/" style="font-size: 10px;">dom,frontend,development</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/jquery-study-frontend/" style="font-size: 10px;">jquery,study,frontend</a>
     </div>
   </div>
 
@@ -275,7 +395,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -287,6 +407,14 @@
       <ul>
         
           <li>
+            <a href="/2016/06/21/读jquery源码摘要01/">读jquery源码摘要01</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/21/一篇有趣的前端文章读后思考和总结/">一篇有趣的前端文章读后思考和总结</a>
+          </li>
+        
+          <li>
             <a href="/2016/06/21/DOM节点数/">DOM节点数</a>
           </li>
         
@@ -296,10 +424,6 @@
         
           <li>
             <a href="/2015/08/30/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2015/08/12/准备工作/">第一个atom插件 - 准备工作</a>
           </li>
         
       </ul>
