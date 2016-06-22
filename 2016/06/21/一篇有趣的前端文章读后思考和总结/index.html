@@ -7,26 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="今天读了一篇有趣读文章前端不为人知的一面，以下是几点思考和总结:
 
-利用a标签自动解析URLfunction parseURL(url) {  var a =  document.createElement(‘a’);  a.href = url;  return {source: url,
-protocol: a.protocol.replace(&apos;:&apos;,&apos;&apos;),
-host: a.hostnam">
+利用a标签自动解析URL
+123456789101112131415161718192021222324252627function parseURL(url) &amp;#123;  var a =  document.createElement(&apos;a&apos;);  a.href = url;  return &amp;#123;      sour">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一篇有趣的前端文章读后思考和总结">
 <meta property="og:url" content="http://huming0618.github.io/2016/06/21/一篇有趣的前端文章读后思考和总结/index.html">
 <meta property="og:site_name" content="小皮的空间">
 <meta property="og:description" content="今天读了一篇有趣读文章前端不为人知的一面，以下是几点思考和总结:
 
-利用a标签自动解析URLfunction parseURL(url) {  var a =  document.createElement(‘a’);  a.href = url;  return {source: url,
-protocol: a.protocol.replace(&apos;:&apos;,&apos;&apos;),
-host: a.hostnam">
-<meta property="og:updated_time" content="2016-06-21T15:51:57.000Z">
+利用a标签自动解析URL
+123456789101112131415161718192021222324252627function parseURL(url) &amp;#123;  var a =  document.createElement(&apos;a&apos;);  a.href = url;  return &amp;#123;      sour">
+<meta property="og:updated_time" content="2016-06-22T15:32:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一篇有趣的前端文章读后思考和总结">
 <meta name="twitter:description" content="今天读了一篇有趣读文章前端不为人知的一面，以下是几点思考和总结:
 
-利用a标签自动解析URLfunction parseURL(url) {  var a =  document.createElement(‘a’);  a.href = url;  return {source: url,
-protocol: a.protocol.replace(&apos;:&apos;,&apos;&apos;),
-host: a.hostnam">
+利用a标签自动解析URL
+123456789101112131415161718192021222324252627function parseURL(url) &amp;#123;  var a =  document.createElement(&apos;a&apos;);  a.href = url;  return &amp;#123;      sour">
   
     <link rel="alternative" href="/atom.xml" title="小皮的空间" type="application/atom+xml">
   
@@ -96,40 +93,26 @@ host: a.hostnam">
       
         <p>今天读了一篇有趣读文章<a href="http://www.cnblogs.com/Wayou/p/things_you_dont_know_about_frontend.html?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">前端不为人知的一面</a>，以下是几点思考和总结:</p>
 <ul>
-<li>利用a标签自动解析URL<br>function parseURL(url) {<br>  var a =  document.createElement(‘a’);<br>  a.href = url;<br>  return {<pre><code>source: url,
-protocol: a.protocol.replace(<span class="string">':'</span>,<span class="string">''</span>),
-host: a.hostname,
-port: a.port,
-query: a.search,
-params: (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="keyword">var</span> ret = {},
-        seg = a.search.replace(<span class="regexp">/^\?/</span>,<span class="string">''</span>).split(<span class="string">'&amp;'</span>),
-        len = seg.length, i = <span class="number">0</span>, s;
-    <span class="keyword">for</span> (;i&lt;len;i++) {
-        <span class="keyword">if</span> (!seg[i]) { <span class="keyword">continue</span>; }
-        s = seg[i].split(<span class="string">'='</span>);
-        ret[s[<span class="number">0</span>]] = s[<span class="number">1</span>];
-    }
-    <span class="keyword">return</span> ret;
-})(),
-file: (a.pathname.match(<span class="regexp">/\/([^\/?#]+)$/i</span>) || [,<span class="string">''</span>])[<span class="number">1</span>],
-hash: a.hash.replace(<span class="string">'#'</span>,<span class="string">''</span>),
-path: a.pathname.replace(<span class="regexp">/^([^\/])/</span>,<span class="string">'/$1'</span>),
-relative: (a.href.match(<span class="regexp">/tps?:\/\/[^\/]+(.+)/</span>) || [,<span class="string">''</span>])[<span class="number">1</span>],
-segments: a.pathname.replace(<span class="regexp">/^\//</span>,<span class="string">''</span>).split(<span class="string">'/'</span>)
-</code></pre>  };<br>}</li>
-<li><p>script保存任意信息<br><script type="text" id="template"><br>  <h1>This won’t display</h1><br></script><br>var text = document.getElementById(‘template’).innerHTML</p>
+<li><p>利用a标签自动解析URL</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseURL</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a =  <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">  a.href = url;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">      source: url,</span><br><span class="line">      protocol: a.protocol.replace(<span class="string">':'</span>,<span class="string">''</span>),</span><br><span class="line">      host: a.hostname,</span><br><span class="line">      port: a.port,</span><br><span class="line">      query: a.search,</span><br><span class="line">      params: (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="keyword">var</span> ret = &#123;&#125;,</span><br><span class="line">              seg = a.search.replace(<span class="regexp">/^\?/</span>,<span class="string">''</span>).split(<span class="string">'&amp;'</span>),</span><br><span class="line">              len = seg.length, i = <span class="number">0</span>, s;</span><br><span class="line">          <span class="keyword">for</span> (;i&lt;len;i++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (!seg[i]) &#123; <span class="keyword">continue</span>; &#125;</span><br><span class="line">              s = seg[i].split(<span class="string">'='</span>);</span><br><span class="line">              ret[s[<span class="number">0</span>]] = s[<span class="number">1</span>];</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">return</span> ret;</span><br><span class="line">      &#125;)(),</span><br><span class="line">      file: (a.pathname.match(<span class="regexp">/\/([^\/?#]+)$/i</span>) || [,<span class="string">''</span>])[<span class="number">1</span>],</span><br><span class="line">      hash: a.hash.replace(<span class="string">'#'</span>,<span class="string">''</span>),</span><br><span class="line">      path: a.pathname.replace(<span class="regexp">/^([^\/])/</span>,<span class="string">'/$1'</span>),</span><br><span class="line">      relative: (a.href.match(<span class="regexp">/tps?:\/\/[^\/]+(.+)/</span>) || [,<span class="string">''</span>])[<span class="number">1</span>],</span><br><span class="line">      segments: a.pathname.replace(<span class="regexp">/^\//</span>,<span class="string">''</span>).split(<span class="string">'/'</span>)</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>垂直水平居中<br>.center-vertical {<br>  position: relative;<br>  top: 50%;<br>  transform: translateY(-50%);<br>}<br>.center-horizontal {<br>  position: relative;<br>  left: 50%;<br>  transform: translateX(-50%);<br>}</p>
+<li><p>script保存任意信息</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">type</span>=<span class="string">"text"</span> id=<span class="string">"template"</span>&gt;</span><br><span class="line">  &lt;h1&gt;<span class="type">This</span> won't display&lt;/h1&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"><span class="keyword">var</span> text = document.getElementById('<span class="keyword">template</span>').innerHTML</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>多重边框<br>div {<br>  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(0, 0, 0, 0.2), 0 0 0 24px rgba(0, 0, 0, 0.2);<br>  height: 200px;<br>  margin: 50px auto;<br>  width: 400px<br>}</p>
+<li><p>垂直水平居中</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.center-vertical</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">translateY</span>(-<span class="number">50%</span>)</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.center-horizontal</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">translateX</span>(-<span class="number">50%</span>)</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多重边框</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">  box-shadow: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">6</span><span class="function">px <span class="title">rgba</span><span class="params">(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.2</span>)</span>, 0 0 0 12px <span class="title">rgba</span><span class="params">(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.2</span>)</span>, 0 0 0 18px <span class="title">rgba</span><span class="params">(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.2</span>)</span>, 0 0 0 24px <span class="title">rgba</span><span class="params">(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.2</span>)</span></span>;</span><br><span class="line">  height: <span class="number">200</span>px;</span><br><span class="line">  margin: <span class="number">50</span>px <span class="keyword">auto</span>;</span><br><span class="line">  width: <span class="number">400</span>px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建长宽比固定的元素</p>
-<div style="width: 100%; position: relative; padding-bottom: 20%;"><br>  <div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;background-color:yellow;"><br>      this content will have a constant aspect ratio that varies based on the width.<br>  </div><br></div>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> style=<span class="string">"width: 100%; position: relative; padding-bottom: 20%;"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> style=<span class="string">"position: absolute; left: 0; top: 0; right: 0; bottom: 0;background-color:yellow;"</span>&gt;</span><br><span class="line">      this content will have a <span class="type">constant</span> aspect ratio <span class="keyword">that</span> varies based <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">the</span> width.</span><br><span class="line">  &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>整数的操作<br>var foo = (12.4 / 4.13) | 0;//结果为3<br>var bar = ~~(12.4 / 4.13);//结果为3<br><a href="http://jsperf.com/math-floor-vs-math-round-vs-parseint/42" target="_blank" rel="external">详见</a></p>
+<li><p>整数的操作</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var foo = (12.4 / 4.13) | 0;//结果为3</span><br><span class="line">var bar = ~~(12.4 / 4.13);//结果为3</span><br><span class="line">[<span class="link_label">详见</span>](<span class="link_url">http://jsperf.com/math-floor-vs-math-round-vs-parseint/42</span>)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>不声明第三个变量的值交换<br>var a=1,b=2;a=[b,b=a][0];</p>
+<li><p>不声明第三个变量的值交换</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a=1,b=2;a=[<span class="link_label">b,b=a</span>][<span class="link_reference">0</span>];</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>延伸阅读<br><a href="http://www.cnblogs.com/Wayou/p/jquery_best_practise.html" target="_blank" rel="external">jQuery编程的最佳实践</a><br><a href="http://learn.jquery.com/performance/detach-elements-before-work-with-them/" target="_blank" rel="external">Deattach</a></p>
