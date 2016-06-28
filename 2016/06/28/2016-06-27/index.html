@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: jquery,study,frontend | 小皮的空间</title>
+  <title>2016-06-27 | 小皮的空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小皮的空间">
-<meta property="og:url" content="http://huming0618.github.io/tags/jquery-study-frontend/index.html">
+  <meta name="description" content="Projectds-shop目前最重要的前后端的整体设计，特别是对于应用在多端上这个问题。
+前端框架学习今天开始了这个计划的第一天, 该计划的目的在于学习和探索不同框架的设计思想, 在学习过程就会发现设计中的每一个方面都有可能具有框架整体设计思想的印记，所以在此学习过程中，每学习一个方面都应该结合整体视角来加深理解。比如在了解一个框架的渲染体系后，可以思考下其渲染方式对数据流，事件绑定等会产生怎样">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2016-06-27">
+<meta property="og:url" content="http://huming0618.github.io/2016/06/28/2016-06-27/index.html">
 <meta property="og:site_name" content="小皮的空间">
-<meta property="og:description">
+<meta property="og:description" content="Projectds-shop目前最重要的前后端的整体设计，特别是对于应用在多端上这个问题。
+前端框架学习今天开始了这个计划的第一天, 该计划的目的在于学习和探索不同框架的设计思想, 在学习过程就会发现设计中的每一个方面都有可能具有框架整体设计思想的印记，所以在此学习过程中，每学习一个方面都应该结合整体视角来加深理解。比如在了解一个框架的渲染体系后，可以思考下其渲染方式对数据流，事件绑定等会产生怎样">
+<meta property="og:updated_time" content="2016-06-28T02:57:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小皮的空间">
-<meta name="twitter:description">
+<meta name="twitter:title" content="2016-06-27">
+<meta name="twitter:description" content="Projectds-shop目前最重要的前后端的整体设计，特别是对于应用在多端上这个问题。
+前端框架学习今天开始了这个计划的第一天, 该计划的目的在于学习和探索不同框架的设计思想, 在学习过程就会发现设计中的每一个方面都有可能具有框架整体设计思想的印记，所以在此学习过程中，每学习一个方面都应该结合整体视角来加深理解。比如在了解一个框架的渲染体系后，可以思考下其渲染方式对数据流，事件绑定等会产生怎样">
   
     <link rel="alternative" href="/atom.xml" title="小皮的空间" type="application/atom+xml">
   
@@ -59,39 +63,56 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/06/21/读jquery源码摘要01/" class="archive-article-date">
-  <time datetime="2016-06-21T15:52:23.000Z" itemprop="datePublished">Jun 21</time>
+        <section id="main"><article id="post-2016-06-27" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/28/2016-06-27/" class="article-date">
+  <time datetime="2016-06-28T02:57:47.000Z" itemprop="datePublished">2016-06-28</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/21/读jquery源码摘要01/">读jquery源码摘要01</a>
+    <h1 class="article-title" itemprop="name">
+      2016-06-27
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Project">Project</h1><h5 id="ds-shop">ds-shop</h5><p>目前最重要的前后端的整体设计，特别是对于应用在多端上这个问题。</p>
+<h1 id="前端框架学习">前端框架学习</h1><p>今天开始了这个计划的第一天, 该计划的目的在于学习和探索不同框架的设计思想, 在学习过程就会发现设计中的每一个方面都有可能具有框架整体设计思想的印记，所以在此学习过程中，每学习一个方面都应该结合整体视角来加深理解。比如在了解一个框架的渲染体系后，可以思考下其渲染方式对数据流，事件绑定等会产生怎样的影响。</p>
+<h1 id="React">React</h1><p>今天主要看了<a href="https://facebook.github.io/react/docs/displaying-data.html" target="_blank" rel="external">React渲染</a>和<a href="https://facebook.github.io/react/docs/multiple-components.html" target="_blank" rel="external">组件组合</a>这个两方面, 在React官方文档上对于其框架功能介绍的同时，也阐述了其设计理念，这是一种很好的文档风格。</p>
+<p>React的VirtualDOM是种很有创意的设计，也是整个框架思想的核心，依靠这一点，React可以在任何一种<strong>类DOM</strong>(可以与DOM互相转换)的UI模式上进行渲染。这也是React能够成为React Native平台开发工具的重要原因。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://huming0618.github.io/2016/06/28/2016-06-27/" data-id="cipyv5d4v00020g0uoauojaoo" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/27/2016-06-26/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2016-06-26</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           <aside id="sidebar">
