@@ -3,21 +3,54 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | 小皮的空间</title>
+  <title>开发总结201707 | 小皮的空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="新的知识点:
+indexedDB
+angular component
+angular directive “require”
+angular scope 方法
+编辑区域实现模拟选取高亮
+IE下input事件 无法适用于contenteditable区域
+composition事件 
+日文的平假名/片假名的转换
+
+设计总结
+过多的使用消息传递导致代码逻辑分散
+插件系统中，钩子(Hook)的作用应该多">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://huming0618.github.io/2015/08/30/hello-world/index.html">
+<meta property="og:title" content="开发总结201707">
+<meta property="og:url" content="http://huming0618.github.io/2017/07/17/开发总结20170717/index.html">
 <meta property="og:site_name" content="小皮的空间">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2015-08-30T14:25:31.000Z">
+<meta property="og:description" content="新的知识点:
+indexedDB
+angular component
+angular directive “require”
+angular scope 方法
+编辑区域实现模拟选取高亮
+IE下input事件 无法适用于contenteditable区域
+composition事件 
+日文的平假名/片假名的转换
+
+设计总结
+过多的使用消息传递导致代码逻辑分散
+插件系统中，钩子(Hook)的作用应该多">
+<meta property="og:updated_time" content="2017-07-17T13:52:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="开发总结201707">
+<meta name="twitter:description" content="新的知识点:
+indexedDB
+angular component
+angular directive “require”
+angular scope 方法
+编辑区域实现模拟选取高亮
+IE下input事件 无法适用于contenteditable区域
+composition事件 
+日文的平假名/片假名的转换
+
+设计总结
+过多的使用消息传递导致代码逻辑分散
+插件系统中，钩子(Hook)的作用应该多">
   
     <link rel="alternative" href="/atom.xml" title="小皮的空间" type="application/atom+xml">
   
@@ -63,10 +96,10 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-开发总结20170717" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/30/hello-world/" class="article-date">
-  <time datetime="2015-08-30T14:25:31.000Z" itemprop="datePublished">2015-08-30</time>
+    <a href="/2017/07/17/开发总结20170717/" class="article-date">
+  <time datetime="2017-07-17T13:52:13.000Z" itemprop="datePublished">2017-07-17</time>
 </a>
     
   </div>
@@ -77,7 +110,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      开发总结201707
     </h1>
   
 
@@ -85,41 +118,50 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="新的知识点:">新的知识点:</h2><ul>
+<li>indexedDB</li>
+<li>angular component</li>
+<li>angular directive “require”</li>
+<li>angular scope 方法</li>
+<li>编辑区域实现模拟选取高亮</li>
+<li>IE下input事件 无法适用于contenteditable区域</li>
+<li>composition事件 </li>
+<li>日文的平假名/片假名的转换</li>
+</ul>
+<h2 id="设计总结">设计总结</h2><ul>
+<li>过多的使用消息传递导致代码逻辑分散</li>
+<li>插件系统中，钩子(Hook)的作用应该多于消息机制</li>
+</ul>
+<h2 id="任务总结">任务总结</h2><ul>
+<li>对任务接口风险评估没有做好 比如服务端API, CSS的验证<ul>
+<li>应该及时编写代码验证，及时反馈和沟通</li>
+</ul>
+</li>
+<li>没有整理出详细的功能需求 <ul>
+<li>应该对照需求， 整理出功能点</li>
+<li>编写代码及时验证</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2015/08/30/hello-world/" data-id="cj587nhzq0007609k1agrapr5" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2017/07/17/开发总结20170717/" data-id="cj587ni030008609khv93lw2q" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发总结/">开发总结</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2015/08/30/记一次产品经理活动/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          记一次产品经理活动
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/08/12/准备工作/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/06/05/2017-06-05/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">第一个atom插件 - 准备工作</div>
+      <div class="article-nav-title">2017-06-05</div>
     </a>
   
 </nav>
