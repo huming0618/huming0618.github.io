@@ -61,6 +61,128 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-09-18" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/18/2017-09-18/" class="article-date">
+  <time datetime="2017-09-18T14:20:39.000Z" itemprop="datePublished">2017-09-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/18/2017-09-18/">2017-09-18</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="关于windows10的子系统">关于windows10的子系统</h1><p>win10引入一种有别与虚拟机的新技术 - WSL(windows subsystem for linux), 在上面可以运行一个基于Ubuntu的子系统,其基本原理为在windows内核上建立Linux内核接口来运行Linux二进制文件, 以下来自wiki的引用。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Windows Subsystem for Linux（简称WSL）是一个为在Windows 10上能够原生运行Linux二进制可执行文件（ELF格式）的兼容层。它是由微软与Canonical公司合作开发，目标是使纯正的Ubuntu 14.04 “Trusty Tahr”映像能下载和解压到用户的本地计算机，并且映像内的工具和实用工具能在此子系统上原生运行。</p>
+<p>WSL提供了一个微软开发的Linux兼容内核接口（不包含Linux代码），来自Ubuntu的用户模式二进制文件在其上运行。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><a href="https://blogs.msdn.microsoft.com/wsl/2016/06/08/wsl-system-calls/" target="_blank" rel="external">这篇文章</a>介绍了WSL是如何进行系统调用的，大概可以解释为将linux的系统调用翻译和转换为windows的系统调用。</p>
+<p>参考:<br><a href="https://blogs.msdn.microsoft.com/wsl/" target="_blank" rel="external">Blog</a></p>
+<h1 id="JS的空白字符">JS的空白字符</h1><p>在可编辑区域里，如果想插入一个空白，可以使用non-break space，如<br><code>range.insertNode(document.createTextNode(&#39;\u00A0&#39;))</code></p>
+<p>参考<br><a href="https://stackoverflow.com/questions/19810122/how-do-i-add-a-non-breaking-whitespace-in-javascript-without-using-innerhtml" target="_blank" rel="external">StackOverflow</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://huming0618.github.io/2017/09/18/2017-09-18/" data-id="cj7q9devx000fiv9knbovk6sv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-高性能计算与JS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/18/高性能计算与JS/" class="article-date">
+  <time datetime="2017-09-18T13:48:08.000Z" itemprop="datePublished">2017-09-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/18/高性能计算与JS/">高性能计算与JS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="要点">要点</h2><ul>
+<li>高性能</li>
+<li>WebWorker</li>
+<li>WebAssembly</li>
+<li>GPU / WebGL</li>
+<li>Node’s V8 Engine</li>
+<li>Node Multi-Process</li>
+<li>Node Cluster</li>
+</ul>
+<h2 id="定义高性能">定义高性能</h2><h2 id="JS与密集型计算">JS与密集型计算</h2><h3 id="为什么不适合">为什么不适合</h3><h2 id="WebWorker">WebWorker</h2><h3 id="多线程?">多线程?</h3><h3 id="Code">Code</h3><ul>
+<li><a href="https://codepen.io/huming0618/pen/qXWwvr" target="_blank" rel="external">https://codepen.io/huming0618/pen/qXWwvr</a></li>
+<li><a href="https://jsfiddle.net/2tj708jt/1/" target="_blank" rel="external">https://jsfiddle.net/2tj708jt/1/</a></li>
+<li><a href="https://jsfiddle.net/2tj708jt/15/" target="_blank" rel="external">https://jsfiddle.net/2tj708jt/15/</a></li>
+</ul>
+<h2 id="WebAssembly">WebAssembly</h2><h3 id="介绍">介绍</h3><h3 id="工具">工具</h3><h3 id="与Assembly不同">与Assembly不同</h3><ul>
+<li>不直接被转为机器码执行</li>
+<li>虚拟指令</li>
+<li>兼容多种架构</li>
+</ul>
+<h2 id="利用WebGL">利用WebGL</h2><h3 id="什么是WebGL">什么是WebGL</h3><ul>
+<li>OpenGL的Web绑定</li>
+<li>GPU<h3 id="GLSL">GLSL</h3>### </li>
+</ul>
+<h5 id="Reference">Reference</h5><ul>
+<li><a href="https://hacks.mozilla.org/2017/02/what-makes-webassembly-fast/" target="_blank" rel="external">https://hacks.mozilla.org/2017/02/what-makes-webassembly-fast/</a></li>
+<li><a href="https://hacks.mozilla.org/2017/02/creating-and-working-with-webassembly-modules/" target="_blank" rel="external">https://hacks.mozilla.org/2017/02/creating-and-working-with-webassembly-modules/</a></li>
+<li><a href="http://caniuse.com/#feat=wasm" target="_blank" rel="external">WebAssembly Support in Browser</a></li>
+<li><a href="https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#all-os-installation-instructions-portable-sdk" target="_blank" rel="external">emscripten</a></li>
+<li><a href="http://www.frontopen.com/1463.html" target="_blank" rel="external">http://www.frontopen.com/1463.html</a></li>
+<li><a href="https://hub.docker.com/r/apiaryio/emcc/" target="_blank" rel="external">https://hub.docker.com/r/apiaryio/emcc/</a></li>
+<li><a href="https://wasdk.github.io/WasmFiddle" target="_blank" rel="external">Generate WASM online</a></li>
+<li><a href="https://webglfundamentals.org/webgl/lessons/webgl-shaders-and-glsl.html" target="_blank" rel="external">https://webglfundamentals.org/webgl/lessons/webgl-shaders-and-glsl.html</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://huming0618.github.io/2017/09/18/高性能计算与JS/" data-id="cj7q9devq0008iv9k1a6fyggv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能/">性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算/">计算</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-开发总结20170717" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/17/开发总结20170717/" class="article-date">
@@ -112,7 +234,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2017/07/17/开发总结20170717/" data-id="cj587ni030008609khv93lw2q" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2017/07/17/开发总结20170717/" data-id="cj7q9dew2000kiv9k7ktx2egu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发总结/">开发总结</a></li></ul>
@@ -203,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2017/06/05/2017-06-05/" data-id="cj587ni07000b609kdbjilqr8" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2017/06/05/2017-06-05/" data-id="cj7q9dew8000niv9k1izeyalp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -276,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2017/05/14/2017-05-14/" data-id="cj587ni0b000g609kzk2yw2sk" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2017/05/14/2017-05-14/" data-id="cj7q9dewg000siv9km06gkh10" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/">idea</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/odoo/">odoo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thoughts/">thoughts</a></li></ul>
@@ -339,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2017/05/05/2017-05-05/" data-id="cj587ni0h000s609ktxyg7qby" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2017/05/05/2017-05-05/" data-id="cj7q9dewp0013iv9k6aoxldlv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Electron/">Electron</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NBA/">NBA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -431,7 +553,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2017/01/08/2017-01-07/" data-id="cj587ni0m0012609k2wzagyh8" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2017/01/08/2017-01-07/" data-id="cj7q9dex0001div9k9faijs5f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/雾霾/">雾霾</a></li></ul>
@@ -475,7 +597,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2016/09/08/2016-09-07/" data-id="cj587ni0q0016609kbxtftbx9" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2016/09/08/2016-09-07/" data-id="cj7q9dex7001hiv9k2kd1479l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计划/">计划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/语言学习/">语言学习</a></li></ul>
@@ -514,7 +636,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2016/09/08/2016-08-20/" data-id="cj587ni0v001b609k7635lbit" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2016/09/08/2016-08-20/" data-id="cj7q9dexd001miv9kqs64bjr2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计/">设计</a></li></ul>
@@ -558,122 +680,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2016/09/08/2016-08-16/" data-id="cj587ni10001e609k6rpx2ifk" class="article-share-link">Share</a>
+      <a data-url="http://huming0618.github.io/2016/09/08/2016-08-16/" data-id="cj7q9dexj001piv9k2tbezjbk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/英语/">英语</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-08-09" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/08/2016-08-09/" class="article-date">
-  <time datetime="2016-09-08T15:47:23.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/2016-08-09/">2016-08-09</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="每日一词">每日一词</h1><p>hazardous<br><code>adj. 有风险的</code></p>
-<h1 id="读书_-_&lt;&lt;设计原本&gt;&gt;">读书 - &lt;&lt;设计原本&gt;&gt;</h1><p>这是一本关于<strong>设计</strong>方法论的书, 它从各个方面对”设计”这一复杂过程进行了阐述。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2016/09/08/2016-08-09/" data-id="cj587ni14001l609k1p3gnrfs" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书/">读书</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-07-18" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/18/2016-07-18/" class="article-date">
-  <time datetime="2016-07-18T14:54:42.000Z" itemprop="datePublished">2016-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/18/2016-07-18/">2016-07-18</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="学习中的积累">学习中的积累</h1><p>积累不是一个简单的输入累加的过程, 而可能是一个复杂连续的过程，比如我今天遇见了jsx中classname直接声明无效的问题, 查阅资料后解决了问题,如果我继续对这个问题研究并掌握其中jsx相关的知识，整个过程就可以概括为:<br>问题=&gt;收集=&gt;解决=&gt;探究=&gt;归纳， 其中任何一格环节都是必不可少的，对目前而言, 每天从各种途径获取对信息都非常多， 但基本只做到了收集这一步, 这样的习惯是对知识或技能的积累无用的.</p>
-<p>所以，最重要的是能够建立一个好的习惯，把每天的遇到的知识点系统化地汇集成自己的体系中, 以下是对此一些新的想法:</p>
-<ul>
-<li>利用好工具<ul>
-<li>使用思维导图，可以把每天学习到东西利用导图集合在一起.</li>
-<li>手机上的收集尽量使用印象笔记，这样可以在电脑上查看阅读。</li>
-<li>尽量把收集的知识点放在一个工具里面，或是收集后在整理在一个工具里面。</li>
-</ul>
-</li>
-<li>好的习惯<ul>
-<li>固定一个时间对自己的博客，思维导图，收集条目进行回顾<ul>
-<li>博客可以每周进行一次</li>
-<li>思维导图可以每周两次</li>
-<li>其他如印象笔记可以每天或每两天进行一次整理</li>
-</ul>
-</li>
-<li>有意识地形成知识积累的环节链<ul>
-<li>及时整理总结</li>
-<li>合理安排每天的任务</li>
-<li>对每个知识点设置一个掌握的期望值</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="时间安排">时间安排</h1><ul>
-<li>每天固定好一个时间睡觉，尽量不要变化, 这样有利于每天的时间安排</li>
-<li>对于开发中各种工具问题，在非紧急的情况下，不要集中大量的时间研究，应该合理地分散到每天</li>
-<li>晚上最好能够固定为读书和学习语言, 早上能够更早起来最好</li>
-</ul>
-<h1 id="React">React</h1><p>在jsx中, 需要使用className来设置类名</p>
-<pre><code>Since JSX <span class="keyword">is</span> JavaScript, identifiers such <span class="keyword">as</span> <span class="keyword">class</span> <span class="keyword">and</span> <span class="keyword">for</span> are discouraged <span class="keyword">as</span> XML attribute names. Instead, React DOM components expect DOM <span class="keyword">property</span> names <span class="keyword">like</span> className <span class="keyword">and</span> htmlFor, respectively.
-</code></pre><p>可以延伸了解下JSX的编译原理和class做为数据操作</p>
-<p><a href="https://facebook.github.io/react/docs/jsx-in-depth.html" target="_blank" rel="external">Refer Link</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://huming0618.github.io/2016/07/18/2016-07-18/" data-id="cj587ni17001o609kol66b7i0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/时间/">时间</a></li></ul>
 
     </footer>
   </div>
@@ -697,7 +707,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular/">Angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NBA/">NBA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/">frontend</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/odoo/">odoo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/study/">study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thoughts/">thoughts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作/">工作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发总结/">开发总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日语/">日语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间/">时间</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计/">设计</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语言学习/">语言学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书/">读书</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雾霾/">雾霾</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/韩语/">韩语</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular/">Angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NBA/">NBA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/">frontend</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/odoo/">odoo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/study/">study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thoughts/">thoughts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作/">工作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发/">开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发总结/">开发总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能/">性能</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日语/">日语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间/">时间</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算/">计算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计/">设计</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语言学习/">语言学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书/">读书</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雾霾/">雾霾</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/韩语/">韩语</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -706,7 +716,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/css/" style="font-size: 12.5px;">css</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/dom/" style="font-size: 10px;">dom</a> <a href="/tags/frontend/" style="font-size: 15px;">frontend</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/jquery/" style="font-size: 12.5px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/odoo/" style="font-size: 10px;">odoo</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/study/" style="font-size: 10px;">study</a> <a href="/tags/thoughts/" style="font-size: 10px;">thoughts</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/学习/" style="font-size: 15px;">学习</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 12.5px;">开发</a> <a href="/tags/开发总结/" style="font-size: 10px;">开发总结</a> <a href="/tags/摄影/" style="font-size: 10px;">摄影</a> <a href="/tags/日语/" style="font-size: 10px;">日语</a> <a href="/tags/时间/" style="font-size: 10px;">时间</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a> <a href="/tags/计划/" style="font-size: 10px;">计划</a> <a href="/tags/设计/" style="font-size: 17.5px;">设计</a> <a href="/tags/语言学习/" style="font-size: 10px;">语言学习</a> <a href="/tags/读书/" style="font-size: 12.5px;">读书</a> <a href="/tags/雾霾/" style="font-size: 10px;">雾霾</a> <a href="/tags/韩语/" style="font-size: 10px;">韩语</a>
+      <a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/css/" style="font-size: 12px;">css</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/dom/" style="font-size: 10px;">dom</a> <a href="/tags/frontend/" style="font-size: 14px;">frontend</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jquery/" style="font-size: 12px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/odoo/" style="font-size: 10px;">odoo</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/study/" style="font-size: 10px;">study</a> <a href="/tags/thoughts/" style="font-size: 10px;">thoughts</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/学习/" style="font-size: 14px;">学习</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 12px;">开发</a> <a href="/tags/开发总结/" style="font-size: 10px;">开发总结</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a> <a href="/tags/摄影/" style="font-size: 10px;">摄影</a> <a href="/tags/日语/" style="font-size: 10px;">日语</a> <a href="/tags/时间/" style="font-size: 10px;">时间</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a> <a href="/tags/计划/" style="font-size: 10px;">计划</a> <a href="/tags/计算/" style="font-size: 10px;">计算</a> <a href="/tags/设计/" style="font-size: 16px;">设计</a> <a href="/tags/语言学习/" style="font-size: 10px;">语言学习</a> <a href="/tags/读书/" style="font-size: 12px;">读书</a> <a href="/tags/雾霾/" style="font-size: 10px;">雾霾</a> <a href="/tags/韩语/" style="font-size: 10px;">韩语</a>
     </div>
   </div>
 
@@ -715,7 +725,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -727,6 +737,14 @@
       <ul>
         
           <li>
+            <a href="/2017/09/18/2017-09-18/">2017-09-18</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/18/高性能计算与JS/">高性能计算与JS</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/17/开发总结20170717/">开发总结201707</a>
           </li>
         
@@ -736,14 +754,6 @@
         
           <li>
             <a href="/2017/05/14/2017-05-14/">2017-05-14</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/05/2017-05-05/">2017-05-05</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/08/2017-01-07/">2017-01-07</a>
           </li>
         
       </ul>
